@@ -15,8 +15,18 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, On
 	private MediaPlayer mediaPlayer;
 	private SurfaceHolder vidHolder;
 	private SurfaceView vidSurface;
-	//String vidAddress = "http://twit.cachefly.net/video/aaa/aaa0033/aaa0033_h264b_640x368_256.mp4";
-	String vidAddress = "http://www.nasa.gov/multimedia/nasatv/NTV-Public-IPS.m3u8";
+	
+	//TIMOB-18888, Error on 5.1.1 tisdk. Native ok.
+	//String vidAddress = "http://s3-eu-west-1.amazonaws.com/cf-templates-k6ohn88yswx5-eu-west-1/videos/4fbc88e7e4b0b0896e877764/4fbfd5ece4b0932236fc234d.mp4";
+	
+	//TIMOB-18913
+	String vidAddress = "http://twit.cachefly.net/video/aaa/aaa0033/aaa0033_h264b_640x368_256.mp4";
+	
+	//TIMOB-18372, Error -1004. I think this link is down.
+	//String vidAddress = "http://www.nasa.gov/multimedia/nasatv/NTV-Public-IPS.m3u8";
+	//Alternative video below
+	//https://code.google.com/p/android-developer-preview/issues/detail?id=1820 m3u file
+	//String vidAddress = "http://dailyburn-f.akamaihd.net/i/series300/workouts/HR_316/v7_,1390K,895K,555K,310K,155K,.mp4.csmil/master.m3u8?__b__=555K";
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
